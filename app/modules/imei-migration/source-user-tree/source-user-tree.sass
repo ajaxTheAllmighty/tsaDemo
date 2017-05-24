@@ -1,0 +1,111 @@
+.src-tree-component
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  overflow-x: auto
+
+.src-tree-component li
+  margin: 0px 0
+  list-style-type: none
+  position: relative
+  padding: 4px 5px 0px 5px
+
+.src-tree-component li::before
+  content: ''
+  position: absolute
+  top: 0
+  width: 1px
+  height: 100%
+  right: auto
+  left: -10px
+  border-left: 1px dotted #ccc
+  bottom: 50px
+
+.src-tree-component li::after
+  content: ''
+  position: absolute
+  top: 15px
+  width: 11px
+  height: 20px
+  right: auto
+  left: -9px
+  border-top: 1px dotted #ccc
+
+.src-tree-component li div.tree-node
+  display: inline-block
+  padding: 5px 5px
+  margin-left: 5px
+  text-decoration: none
+  font-size: 11px
+  border-radius: 2px
+  -moz-border-radius: 5px
+  text-decoration: underline
+
+/*Remove connectors before root*/
+.src-tree-component > ul > li::before, .src-tree-component > ul > li::after
+  border: 0
+
+/*Remove connectors after last child*/
+.src-tree-component li:last-child::before
+  height: 16px
+
+.src-tree-component > ul
+  padding-left: 0px
+  height: calc(100% - 45px)
+  overflow-y: auto
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+//.src-tree-component li div.tree-node:hover, .src-tree-component li div.tree-node:hover+ul li div.tree-node
+//  background: #c8e4f8
+//  color: #000
+//  border: 1px solid #94a0b4
+/*Connector styles on hover*/
+//.src-tree-component li div.tree-node:hover+ul li::after,
+//.src-tree-component li div.tree-node:hover+ul li::before,
+//.src-tree-component li div.tree-node:hover+ul::before,
+//.src-tree-component li div.tree-node:hover+ul ul::before
+//  border-color:  #f3f3f3
+
+div.tree-node
+  cursor: default
+  position: relative
+
+.tree-node__label
+  font-weight: 100
+
+.tree-node__label.has-imei
+  cursor: pointer
+  display: inline-block
+  position: relative
+  padding-left: 16px
+
+.tree-node__label.has-imei input[type='checkbox']
+  margin-top: 0px
+  position: absolute
+  left: 0px
+  top: 1px
+
+.src-tree-component_opened-node, .src-tree-component_closed-node
+  display: inline-block
+  width: 16px
+  height: 16px
+  cursor: pointer
+  border: solid 1px #5b788d
+  border-radius: 2px
+  text-align: center
+  margin-right: 4px
+
+.src-tree-component_opened-node:hover, .src-tree-component_closed-node:hover
+  font-weight: 700
+  background: #cccccc
+
+.tree-node__selected, .tree-node__selected:hover
+  background: #5B788D !important
+  color: #ffffff !important
+  font-weight: 700
+
+.tree-node__searching
+  background: #D9E2E8
+  color: #000000
+  font-weight: 700

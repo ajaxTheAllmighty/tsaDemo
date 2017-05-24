@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input type="file" name="file" id="fileInput"/>
+    <button onclick="sendFile();">Send</button>
+
+<!--<form action="http://service.tsaplatform.com/TSA.APP.DEMO/Operations" method="post" id="fileUpload">-->
+    <!--<input name="file" type="file"/>-->
+    <!--<input type="text" name="operation" value="photo_upload"/>-->
+    <!--<input type="text" name="use_code" value="180"/>-->
+    <!--<input type="text" name="file_name" value="test.jpg"/>-->
+    <!--&lt;!&ndash;<input type="submit" value="send"/>&ndash;&gt;-->
+<!--</form>-->
+
+<!--<iframe src="about:blank" frameborder="0">-->
+    <!--<form action="http://service.tsaplatform.com/TSA.APP.DEMO/Operations" method="post" id="fileUpload">-->
+        <!--<input name="file" type="file"/>-->
+        <!--<input type="text" name="operation" value="photo_upload"/>-->
+        <!--<input type="text" name="use_code" value="180"/>-->
+        <!--<input type="text" name="file_name" value="test.jpg"/>-->
+        <!--<input type="submit" value="send"/>-->
+    <!--</form>-->
+<!--</iframe>-->
+
+<!--<button onclick="sendFile();">Send</button>-->
+    <script src="libs/jquery/jquery-1.11.3.min.js"></script>
+    <script>
+////        $('#fileUpload').on( "submit", function(e){
+////            e.preventDefault();
+////            $('#fileUpload').submit();
+////        })
+        function sendFile(e) {
+//            $.ajax({
+//                url: "http://service.tsaplatform.com/TSA.APP.DEMO/Operations",
+//                type: 'POST',
+//                data: $("#fileUpload").serialize(),
+//                success: function(result){
+//                    console.log(result);
+////                    $("#div1").html(result);
+//                },
+//                error: function (error) {
+//                    console.log(error);
+//                }
+//            });
+//        }
+//            console.log('upload');
+            var file = document.getElementById('fileInput');
+            var formData = new FormData();
+            formData.append('file', file.files[0]);
+//            formData.append('operation', 'photo_upload');
+//            formData.append('use_code', '180');
+//            formData.append('file_name', 'test.jpg');
+
+            $.ajax({
+                url: "http://service.tsaplatform.com/TSA.APP.DEMO/Operations?operation=photo_upload&use_code=180&file_name=test.jpg",
+                type: 'POST',
+                data: formData,
+//                dataType: 'script',
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (result) {
+                    $("#div1").html(result);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
+        }
+
+    </script>
+</body>
+</html>

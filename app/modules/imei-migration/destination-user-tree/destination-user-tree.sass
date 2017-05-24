@@ -1,0 +1,98 @@
+.dest-user-component
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  overflow-x: auto
+
+.dest-user-component li
+  margin: 0px 0
+  list-style-type: none
+  position: relative
+  padding: 4px 5px 0px 5px
+
+.dest-user-component li::before
+  content: ''
+  position: absolute
+  top: 0
+  width: 1px
+  height: 100%
+  right: auto
+  left: -10px
+  border-left: 1px dotted #ccc
+  bottom: 50px
+
+.dest-user-component li::after
+  content: ''
+  position: absolute
+  top: 15px
+  width: 11px
+  height: 20px
+  right: auto
+  left: -9px
+  border-top: 1px dotted #ccc
+
+.dest-user-component li div.tree-node
+  display: inline-block
+  padding: 5px 5px
+  margin-left: 5px
+  text-decoration: none
+  font-size: 11px
+  border-radius: 2px
+  -moz-border-radius: 5px
+  text-decoration: underline
+
+/*Remove connectors before root*/
+.dest-user-component > ul > li::before, .dest-user-component > ul > li::after
+  border: 0
+
+/*Remove connectors after last child*/
+.dest-user-component li:last-child::before
+  height: 16px
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+//.dest-user-component li div.tree-node:hover, .dest-user-component li div.tree-node:hover+ul li div.tree-node
+//  background: #c8e4f8
+//  color: #000
+//  border: 1px solid #94a0b4
+/*Connector styles on hover*/
+//.dest-user-component li div.tree-node:hover+ul li::after,
+//.dest-user-component li div.tree-node:hover+ul li::before,
+//.dest-user-component li div.tree-node:hover+ul::before,
+//.dest-user-component li div.tree-node:hover+ul ul::before
+//  border-color:  #f3f3f3
+
+.dest-user-component > ul
+  padding-left: 0px
+  height: calc(100% - 45px)
+
+.dest-user-component .tree-node
+  cursor: pointer
+
+div.tree-node
+  cursor: default
+  position: relative
+
+.dest-user-component_opened-node, .dest-user-component_closed-node
+  display: inline-block
+  width: 16px
+  height: 16px
+  cursor: pointer
+  border: solid 1px #5b788d
+  border-radius: 2px
+  text-align: center
+  margin-right: 4px
+
+.dest-user-component_opened-node:hover, .dest-user-component_closed-node:hover
+  font-weight: 700
+  background: #cccccc
+
+.tree-node__selected, .tree-node__selected:hover
+  background: #5B788D !important
+  color: #ffffff !important
+  font-weight: 700
+
+.tree-node__searching
+  background: #D9E2E8
+  color: #000000
+  font-weight: 700

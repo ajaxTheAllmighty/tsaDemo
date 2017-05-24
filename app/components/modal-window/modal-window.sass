@@ -1,0 +1,94 @@
+.modal-window
+  display: block
+  position: fixed /* Stay in place */
+  z-index: 1 /* Sit on top */
+  padding-top: 100px /* Location of the box */
+  left: 0
+  top: 0
+  width: 100% /* Full width */
+  height: 100% /* Full height */
+  overflow: auto /* Enable scroll if needed */
+  background-color: rgb(0,0,0) /* Fallback color */
+  background-color: rgba(0,0,0,0.4) /* Black w/ opacity */
+
+/* Modal Content */
+.modal-window__content
+  position: relative
+  margin: auto
+  padding: 0
+  background-color: #fff
+  border: 1px solid #565656
+  border: 1px solid rgba(0, 0, 0, 0.6)
+  border-radius: 6px
+  outline: 0
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5)
+  box-shadow: 0 5px 15px rgba(0,0,0,.5)
+  -webkit-animation-name: animatetop
+  -webkit-animation-duration: 0.4s
+  animation-name: animatetop
+  animation-duration: 0.4s
+
+/* Modal Header */
+.modal-window__header 
+  border-top-left-radius: 4px
+  border-top-right-radius: 4px
+  background: #5B788D
+  color: #ffffff
+  border-bottom: 1px solid #3F5361
+  text-align: center
+  padding: 10px
+
+
+.modal-window__header h2
+  font-size: 18px
+  margin: 0px
+
+.modal-window__header button
+  font-size: 21px
+
+.modal-window__body
+  padding: 15px
+  width: 100%
+  height: calc(100% - 36px)
+  text-align: center
+  overflow-y: auto
+
+.modal-window__body_with-footer
+  padding: 15px
+  width: 100%
+  height: calc(100% - 90px)
+  overflow-y: auto
+
+.modal-window__footer
+  padding: 5px 10px 5px 10px
+  text-align: right
+  border-top: 1px solid #e5e5e5
+
+.modal-window__footer button
+  margin-left: 10px
+
+/* Add Animation */
+@-webkit-keyframes animatetop
+  from 
+    top: -300px
+    opacity: 0
+  to
+    top: 0
+    opacity: 1
+
+@keyframes animatetop
+  from 
+    top: -300px
+    opacity: 0
+  to
+    top: 0
+    opacity: 1
+
+//app loading window
+.app-loading-window__loader
+  margin-right: 20px
+  width: 40px
+  height: 40px
+
+.app-loading-window__message
+  margin-top: 15px

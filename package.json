@@ -1,0 +1,29 @@
+{
+  "name": "tsa",
+  "description": "tsa system",
+  "version": "0.1.0",
+  "licenses": [
+    {
+      "name": "BSD-3-Clause",
+      "url": ""
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^1.12.0",
+    "mithril": "^0.2.5"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-sass": "^1.1.0",
+    "watchify": "latest"
+  },
+  "scripts": {
+    "build": "browserify app/app.js > dist/js/app.js --debug",
+    "watch": "watchify app/app.js -o dist/js/app.js -dv",
+    "production": ""
+  }
+}

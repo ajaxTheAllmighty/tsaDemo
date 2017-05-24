@@ -1,0 +1,80 @@
+.tree-component li
+  margin: 0px 0
+  list-style-type: none
+  position: relative
+  padding: 4px 5px 0px 5px
+
+.tree-component li::before
+  content: ''
+  position: absolute
+  top: 0
+  width: 1px
+  height: 100%
+  right: auto
+  left: -10px
+  border-left: 1px dotted #ccc
+  bottom: 50px
+
+.tree-component li::after
+  content: ''
+  position: absolute
+  top: 15px
+  width: 11px
+  height: 20px
+  right: auto
+  left: -9px
+  border-top: 1px dotted #ccc
+
+.tree-component li div.tree-node
+  display: inline-block
+  padding: 5px 5px
+  margin-left: 5px
+  text-decoration: none
+  font-size: 11px
+  border-radius: 2px
+  -moz-border-radius: 5px
+  text-decoration: underline
+
+/*Remove connectors before root*/
+.tree-component > ul > li::before, .tree-component > ul > li::after
+  border: 0
+
+/*Remove connectors after last child*/
+.tree-component li:last-child::before
+  height: 16px
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+//.tree-component li div.tree-node:hover, .tree-component li div.tree-node:hover+ul li div.tree-node
+//  background: #c8e4f8
+//  color: #000
+//  border: 1px solid #94a0b4
+/*Connector styles on hover*/
+//.tree-component li div.tree-node:hover+ul li::after,
+//.tree-component li div.tree-node:hover+ul li::before,
+//.tree-component li div.tree-node:hover+ul::before,
+//.tree-component li div.tree-node:hover+ul ul::before
+//  border-color:  #f3f3f3
+
+div.tree-node
+  cursor: default
+  position: relative
+
+.tree-component_opened-node, .tree-component_closed-node
+  display: inline-block
+  width: 16px
+  height: 16px
+  cursor: pointer
+  border: solid 1px #5b788d
+  border-radius: 2px
+  text-align: center
+  margin-right: 4px
+
+.tree-component_opened-node:hover, .tree-component_closed-node:hover
+  font-weight: 700
+  background: #cccccc
+
+.tree-node__selected, .tree-node__selected:hover
+  background: #5B788D
+  color: #ffffff
+  font-weight: 700
